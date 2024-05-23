@@ -1,0 +1,18 @@
+import os
+import random
+print(os.listdir('images'))
+
+with open(f'images/{Image20240523195610.png}', 'rb') as f:
+            picture = property.File(f)
+def get_duck_Image20240523195610():    
+    url = 'https://random-d.uk/api/random'
+    res = requests.get(url)
+    data = res.json()
+    return data['url']
+
+
+@bot.command('duck')
+async def duck(ctx):
+    '''duck komutunu çağırdığımızda, program ordek_resmi_urlsi_al fonksiyonunu çağırır.'''
+    Image20240523195610 = get_duck_Image20240523195610()
+    await ctx.send(Image20240523195610)
